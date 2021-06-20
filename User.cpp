@@ -1,3 +1,4 @@
+#include <fstream>
 #include".secret/passwordhashing.cpp"
 
 using namespace std;
@@ -17,17 +18,19 @@ class User{
 
     public:
         bool createUser(string n,string e,unsigned long int p,string pas){
+            
             bool present = false;
+            string line;
 
             creds.open("file_system/creds.csv", ios::in);
             while(creds.good()){
-                string line;
                 getline(creds, line);
                 if(line.find(e)<line.length()){
                     present=true;
                     break;
                 }
             }
+
             creds.close();
 
             if(present==true){
@@ -60,6 +63,7 @@ class User{
             creds.close();
             return true;
         }
+
         bool loginUser(string u, string pas){
             bool present = false;
 
@@ -86,9 +90,11 @@ class User{
             }
         }
         void profile(string user){
+            bool present = false;
+            string line;
+            
             creds.open("file_system/creds.csv", ios::in);
             while(creds.good()){
-                string line;
                 getline(creds, line);
                 if(line.find(user)<line.length()){
                     present=true;

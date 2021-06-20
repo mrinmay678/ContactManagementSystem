@@ -1,8 +1,7 @@
 #include <iostream>
-#include <fstream>
-#include "User.cpp"
 #include "auth.cpp"
 #include "dashboard.cpp"
+
 using namespace std;
 
 int main(){
@@ -10,23 +9,23 @@ int main(){
     cout<<"\t\t----------------------------Welcome to Contact Management System----------------------------"<<endl;
 
     int ch;
+
     cout<<"Enter 1 to Signup"<<endl;
     cout<<"Enter 2 to Login"<<endl;
     cout<<"Enter choice: ";
     cin>>ch;
-
-    switch (ch)
-    {
+    string result;
+    switch(ch){
         case 1:
-            string res = signup();
-            if(res!=""){
-                dashboard(res);
+            result = signup();
+            if(result!=""){
+                dashboard(result);
             }
             break;
         case 2:
-            string res = login();
-            if(res!=""){
-                dashboard(res);
+            result = login();
+            if(result!=""){
+                dashboard(result);
             }
             break;
         default:

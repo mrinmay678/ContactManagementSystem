@@ -1,24 +1,27 @@
 using namespace std;
 
 void showAll(string u){
-    pass;
+    cout<<1;
 }
 
 void addContact(string u){
-    pass;
+    cout<<1;
 }
 
 void removeContact(string u){
-    pass;
+    cout<<1;
 }
 
 void editContact(string u){
-    pass;
+    cout<<1;
 }
 
 void showProfile(string u){
-    User user;
-    user.profile(u);
+    cout<<1;
+}
+
+void logout(string u){
+    cout<<1;
 }
 
 void dashboard(string user){
@@ -45,7 +48,7 @@ void dashboard(string user){
             showProfile(user);
             break;
         case 6:
-            logout(users);
+            logout(user);
             break;
         case 7:
             exit(0);

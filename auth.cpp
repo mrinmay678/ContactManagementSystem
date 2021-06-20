@@ -1,3 +1,5 @@
+#include "User.cpp"
+
 using namespace std;
 
 string login(){
